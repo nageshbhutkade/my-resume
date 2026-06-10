@@ -1,0 +1,9 @@
+{
+  "name": "resume-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static resume website ready for free hosting deployment.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

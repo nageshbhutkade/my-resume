@@ -1,0 +1,402 @@
+:root {
+  --bg: #f2ede3;
+  --surface: rgba(255, 252, 247, 0.94);
+  --surface-strong: #fffdf8;
+  --ink: #1c1a17;
+  --muted: #635b4d;
+  --accent: #c85a36;
+  --accent-deep: #944125;
+  --border: rgba(28, 26, 23, 0.1);
+  --shadow: 0 24px 70px rgba(63, 41, 26, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(200, 90, 54, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(38, 101, 82, 0.18), transparent 24%),
+    linear-gradient(180deg, #f6f0e7 0%, #efe7db 100%);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+body::before {
+  width: 280px;
+  height: 280px;
+  top: 6%;
+  right: 5%;
+  background: rgba(255, 198, 140, 0.45);
+}
+
+body::after {
+  width: 220px;
+  height: 220px;
+  bottom: 10%;
+  left: 4%;
+  background: rgba(53, 122, 106, 0.22);
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.resume-card {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 24px 6px 34px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-copy {
+  max-width: 760px;
+}
+
+.eyebrow,
+.section-heading span,
+.meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+h1 {
+  margin-top: 8px;
+  font-size: clamp(2.6rem, 6vw, 4.7rem);
+  line-height: 0.95;
+}
+
+.role {
+  margin: 14px 0 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.summary {
+  margin: 18px 0 0;
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 14px;
+  min-width: 180px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  cursor: pointer;
+}
+
+.primary-button {
+  border: none;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(28, 26, 23, 0.2);
+}
+
+.secondary-button {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: minmax(250px, 310px) minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.sidebar,
+.content {
+  display: grid;
+  gap: 24px;
+}
+
+.panel {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface-strong);
+}
+
+.panel h2 {
+  font-size: 1.1rem;
+}
+
+.meta-list,
+.bullet-list {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meta-list li + li,
+.bullet-list li + li {
+  margin-top: 12px;
+}
+
+.meta-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.meta-list a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.chip {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(200, 90, 54, 0.1);
+  color: var(--accent-deep);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.timeline {
+  display: grid;
+  gap: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 22px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 244, 235, 0.88), rgba(255, 252, 248, 0.96));
+  border: 1px solid rgba(200, 90, 54, 0.14);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 22px;
+  bottom: 22px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), #f0c3a6);
+}
+
+.item-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.item-header h3 {
+  font-size: 1.1rem;
+}
+
+.item-subtitle,
+.item-period,
+.education-note {
+  color: var(--muted);
+}
+
+.item-subtitle {
+  margin: 4px 0 0;
+  font-weight: 700;
+}
+
+.item-period {
+  font-weight: 500;
+}
+
+.bullet-list {
+  margin-top: 16px;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #fffefb, #fff8f1);
+}
+
+.project-card p {
+  margin: 12px 0 0;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--accent-deep);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.education-item + .education-item {
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .resume-card {
+    padding: 24px 18px;
+  }
+
+  .hero,
+  .grid-layout,
+  .project-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .hero-actions {
+    min-width: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 16px;
+  }
+
+  .hero {
+    padding: 8px 0 26px;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  body::before,
+  body::after,
+  .hero-actions {
+    display: none;
+  }
+
+  .page-shell {
+    padding: 0;
+  }
+
+  .resume-card {
+    max-width: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  .panel,
+  .timeline-item,
+  .project-card {
+    break-inside: avoid;
+  }
+}

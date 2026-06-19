@@ -1,0 +1,9 @@
+{
+  "buildCommand": null,
+  "outputDirectory": "resume-website",
+  "framework": null,
+  "trailingSlash": false,
+  "github": {
+    "silent": true
+  }
+}
